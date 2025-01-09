@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dishes</title>
+</head>
+<body>
+    <h1>Dishes</h1>
+    <ul>
+        {% for dish in dishes %}
+            <li>{{ dish.name }} - {{ dish.description }} - ${{ dish.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
