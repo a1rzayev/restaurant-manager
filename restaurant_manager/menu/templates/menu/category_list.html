@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Categories</title>
-</head>
-<body>
-    <h1>Categories</h1>
-    <ul>
-        {% for category in categories %}
-            <li>{{ category.name }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'menu/base.html' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+<h1>Category List</h1>
+<ul class="list-group">
+    {% for category in categories %}
+        <li class="list-group-item">{{ category.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

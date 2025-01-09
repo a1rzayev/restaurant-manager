@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Restaurants</title>
-</head>
-<body>
-    <h1>Restaurant List</h1>
-    <ul>
-        {% for restaurant in restaurants %}
-            <li>{{ restaurant.name }} - {{ restaurant.address }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'menu/base.html' %}
+
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+<h1>Restaurant List</h1>
+<ul class="list-group">
+    {% for restaurant in restaurants %}
+        <li class="list-group-item">
+            <strong>{{ restaurant.name }}</strong> - {{ restaurant.address }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

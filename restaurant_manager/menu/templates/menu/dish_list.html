@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dishes</title>
-</head>
-<body>
-    <h1>Dishes</h1>
-    <ul>
-        {% for dish in dishes %}
-            <li>{{ dish.name }} - {{ dish.description }} - ${{ dish.price }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'menu/base.html' %}
+
+{% block title %}Dishes{% endblock %}
+
+{% block content %}
+<h1>Dish List</h1>
+<ul class="list-group">
+    {% for dish in dishes %}
+        <li class="list-group-item">
+            <strong>{{ dish.name }}</strong> - {{ dish.price }} - {{ dish.category.name }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
